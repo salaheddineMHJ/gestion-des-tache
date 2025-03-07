@@ -1,0 +1,553 @@
+/* ========== STYLES GÉNÉRAUX ========== */
+* {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-box-sizing: border-box;
+}
+
+/* ========== BOUTONS ========== */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2px);
+}
+
+.button:hover {
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+#ajouterButton, #modifierButton, #afficherDiagrammeButton, #messageButton ,#tachesTermineesButton{
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-font-size: 14px;
+}
+
+#ajouterButton, #modifierButton, #afficherDiagrammeButton {
+    -fx-background-color: #2196F3;
+}
+
+#messageButton {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(255, 193, 7, 0.3), 8, 0, 0, 2px);
+}
+
+#messageButton:hover {
+    -fx-background-color: #FFB300;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+#afficherDiagrammeButton:hover, #modifierButton:hover, #ajouterButton:hover {
+    -fx-background-color: #1976D2;
+}
+
+/* Bouton retour */
+.retourButton {
+    -fx-background-color: #607D8B;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(96, 125, 139, 0.3), 8, 0, 0, 2px);
+}
+
+.retourButton:hover {
+    -fx-background-color: #546E7A;
+    -fx-cursor: hand;
+}
+
+/* Bouton rechercher */
+#rechercherButton {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(33,150,243,0.3), 8, 0, 0, 2px);
+}
+
+#rechercherButton:hover {
+    -fx-background-color: #1976D2;
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+/* ========== TABLEAU ========== */
+.table-view {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 12, 0, 0, 3px);
+    -fx-padding: 5px;
+}
+
+/* En-têtes de colonnes */
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, #2196F3 0%, #1976D2 100%);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-pref-height: 40px;
+    -fx-border-width: 0 1px 0 0;
+    -fx-border-color: #1565C0;
+}
+
+.table-view .column-header-background {
+    -fx-background-radius: 8px 8px 0 0;
+}
+
+/* Lignes du tableau */
+.table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #f5f5f5;
+    -fx-border-width: 0 0 1px 0;
+    -fx-cell-size: 40px;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+    -fx-text-fill: #1976D2;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f0f4ff;
+    -fx-cursor: hand;
+    -fx-effect: innershadow(gaussian, rgba(33,150,243,0.1), 10, 0, 0, 2px);
+}
+
+/* Cellules du tableau */
+.table-cell {
+    -fx-padding: 10px 15px;
+    -fx-border-width: 0 1px 0 0;
+    -fx-border-color: #eeeeee;
+    -fx-alignment: CENTER-LEFT;
+}
+
+/* ========== BARRE DE DÉFILEMENT ========== */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12px;
+}
+
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #bdbdbd;
+    -fx-background-radius: 6px;
+}
+
+/* ========== CARDS (TÂCHES, MESSAGES) ========== */
+.task-card, .message-card {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 8, 0, 0, 3px);
+    -fx-spacing: 8px;
+    -fx-pref-width: 280px;
+    -fx-alignment: center;
+}
+
+.task-card-title, .message-card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3436;
+}
+
+.task-date, .message-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
+}
+
+.priority-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 4px;
+}
+
+/* Priorité haute, moyenne, faible */
+.priority-high {
+    -fx-text-fill: #dc3545;
+    -fx-background-color: #ffe3e6;
+}
+
+.priority-medium {
+    -fx-text-fill: #ffc107;
+    -fx-background-color: #fff3cd;
+}
+
+.priority-low {
+    -fx-text-fill: #28a745;
+    -fx-background-color: #d4edda;
+}
+
+/* Status des cartes */
+.message-status-overdue {
+    -fx-text-fill: #ff4444;
+    -fx-font-weight: bold;
+}
+
+.message-status-today {
+    -fx-text-fill: #ff9900;
+    -fx-font-weight: bold;
+}
+
+.message-status-remaining {
+    -fx-text-fill: #4CAF50;
+    -fx-font-weight: bold;
+}
+
+/* ========== DIAGRAMME PIE ========== */
+.chart-pie {
+    -fx-pie-color-1: #4CAF50; /* Tâches terminées */
+    -fx-pie-color-2: #F44336; /* Tâches non terminées */
+}
+
+/* ========== FILTRE ET RECHERCHE ========== */
+#filterComboBox, #searchField {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 20px;
+    -fx-padding: 8px 15px;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.08), 5, 0, 0, 2px);
+}
+
+#filterComboBox {
+    -fx-padding: 6px 12px;
+}
+
+/* ========== CARTE TÂCHE TERMINÉE ========== */
+.task-card-terminée {
+    -fx-background-color: #e0f7fa;
+    -fx-border-color: #80deea;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.08), 8, 0, 0, 2px);
+    -fx-spacing: 8px;
+    -fx-pref-width: 280px;
+    -fx-alignment: center;
+}
+
+.task-card-terminée .task-card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3436;
+}
+
+.task-card-terminée .task-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2196f3;
+}
+
+.task-card-terminée .priority-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 4px;
+}
+
+.task-card-terminée .status-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4CAF50;
+    -fx-background-color: #d4edda;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 4px;
+}
+/* ========== CARTE TÂCHE TERMINÉE ========== */
+/* Style pour les cartes de tâches terminées (similaire aux cartes de messages) */
+.task-card-terminée {
+    -fx-background-color: white;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 8, 0, 0, 3px);
+    -fx-spacing: 8px;
+    -fx-pref-width: 280px;
+    -fx-alignment: center;
+}
+
+.task-card-terminée .task-card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3436;
+}
+
+.task-card-terminée .task-description {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
+    -fx-wrap-text: true;
+}
+
+.task-card-terminée .task-date {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6c757d;
+}
+
+.task-card-terminée .priority-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 4px;
+}
+
+.task-card-terminée .status-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4CAF50;
+    -fx-background-color: #d4edda;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 4px;
+}
+/* ========== BOUTONS ========== */
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #2196F3; /* Couleur principale */
+    -fx-background-radius: 5px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2px);
+}
+
+.button:hover {
+    -fx-background-color: #1976D2; /* Couleur au survol */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+/* Boutons spécifiques */
+#ajouterButton, #modifierButton, #afficherDiagrammeButton, #messageButton, #rechercherButton {
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-font-size: 14px;
+}
+
+/* Bouton de retour */
+.retourButton {
+    -fx-background-color: #607D8B; /* Couleur secondaire */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(96, 125, 139, 0.3), 8, 0, 0, 2px);
+}
+
+.retourButton:hover {
+    -fx-background-color: #546E7A; /* Couleur au survol */
+    -fx-cursor: hand;
+}
+/* Effet de survol pour les boutons */
+.button:hover {
+    -fx-background-color: #1976D2; /* Couleur au survol */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 3px);
+}
+
+/* Effet de survol pour le bouton de retour */
+.retourButton:hover {
+    -fx-background-color: #546E7A; /* Couleur au survol */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 3px);
+}
+/* ========== BOUTONS DE MODIFICATION ========== */
+#sauvegarderModifButton, #terminerModifButton, #supprimerModifButton, #annulerModifButton {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2px);
+}
+
+/* Bouton Sauvegarder */
+#sauvegarderModifButton {
+    -fx-background-color: #4CAF50; /* Couleur verte */
+}
+
+#sauvegarderModifButton:hover {
+    -fx-background-color: #45a049; /* Couleur au survol */
+}
+
+/* Bouton Terminer */
+#terminerModifButton {
+    -fx-background-color: #FFC107; /* Couleur jaune */
+}
+
+#terminerModifButton:hover {
+    -fx-background-color: #FFB300; /* Couleur au survol */
+}
+
+/* Bouton Supprimer */
+#supprimerModifButton {
+    -fx-background-color: #F44336; /* Couleur rouge */
+}
+
+#supprimerModifButton:hover {
+    -fx-background-color: #e53935; /* Couleur au survol */
+}
+
+/* Bouton Annuler */
+#annulerModifButton {
+    -fx-background-color: #607D8B; /* Couleur grise */
+}
+
+#annulerModifButton:hover {
+    -fx-background-color: #546E7A; /* Couleur au survol */
+}
+/* ========== BOUTON TÂCHES À VENIR ========== */
+#tachesAVenirButton {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-color: #2196F3; /* Couleur principale (bleu) */
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2px);
+}
+
+#tachesAVenirButton:hover {
+    -fx-background-color: #1976D2; /* Couleur au survol */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 3px);
+}
+/* Agrandir le tableau */
+.table-view {
+    -fx-pref-width: 800px;
+    -fx-pref-height: 400px;
+}
+/* ========== STYLE DU TABLEAU ========== */
+.table-view {
+    -fx-background-color: #ffffff; /* Fond blanc */
+    -fx-border-color: #e0e0e0; /* Bordure grise */
+    -fx-border-radius: 8px; /* Coins arrondis */
+    -fx-background-radius: 8px; /* Coins arrondis */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 12, 0, 0, 3px); /* Ombre */
+    -fx-padding: 5px; /* Espace intérieur */
+}
+
+/* ========== EN-TÊTES DE COLONNES ========== */
+.table-view .column-header {
+    -fx-background-color: linear-gradient(to bottom, #2196F3 0%, #1976D2 100%); /* Dégradé bleu */
+    -fx-text-fill: white; /* Texte blanc */
+    -fx-font-weight: bold; /* Texte en gras */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-pref-height: 40px; /* Hauteur des en-têtes */
+    -fx-border-width: 0 1px 0 0; /* Bordure entre les colonnes */
+    -fx-border-color: #1565C0; /* Couleur de la bordure */
+}
+
+.table-view .column-header-background {
+    -fx-background-radius: 8px 8px 0 0; /* Coins arrondis en haut */
+}
+
+/* ========== LIGNES DU TABLEAU ========== */
+.table-row-cell {
+    -fx-background-color: #ffffff; /* Fond blanc */
+    -fx-border-color: #f5f5f5; /* Bordure grise claire */
+    -fx-border-width: 0 0 1px 0; /* Bordure en bas */
+    -fx-cell-size: 40px; /* Hauteur des cellules */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8f9fa; /* Fond gris clair pour les lignes impaires */
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #e3f2fd; /* Fond bleu clair pour la sélection */
+    -fx-text-fill: #1976D2; /* Texte bleu pour la sélection */
+    -fx-font-weight: bold; /* Texte en gras pour la sélection */
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #f0f4ff; /* Fond bleu très clair au survol */
+    -fx-cursor: hand; /* Curseur en forme de main */
+    -fx-effect: innershadow(gaussian, rgba(33, 150, 243, 0.1), 10, 0, 0, 2px); /* Ombre intérieure */
+}
+
+/* ========== CELLULES DU TABLEAU ========== */
+.table-cell {
+    -fx-padding: 10px 15px; /* Espace intérieur */
+    -fx-border-width: 0 1px 0 0; /* Bordure entre les cellules */
+    -fx-border-color: #eeeeee; /* Couleur de la bordure */
+    -fx-alignment: CENTER-LEFT; /* Alignement du texte */
+    -fx-font-size: 14px; /* Taille de la police */
+    -fx-text-fill: #2d3436; /* Couleur du texte */
+}
+
+/* ========== BARRE DE DÉFILEMENT ========== */
+.table-view .scroll-bar:vertical {
+    -fx-background-color: transparent; /* Fond transparent */
+    -fx-pref-width: 12px; /* Largeur de la barre de défilement */
+}
+
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #bdbdbd; /* Couleur du curseur */
+    -fx-background-radius: 6px; /* Coins arrondis */
+}
+/* Style général du formulaire */
+.vbox {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-padding: 20;
+    -fx-alignment: center;
+}
+
+/* Style des champs de saisie */
+.text-field, .combo-box, .date-picker {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 5;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #2196F3;
+    -fx-effect: innershadow(gaussian, rgba(33,150,243,0.2), 10, 0, 0, 2);
+}
+
+/* Style des labels */
+.label {
+    -fx-font-size: 14px;
+}
+/* Bouton Réinitialiser (Jaune) */
+.retourButton {
+    -fx-background-color: #2196F3; /* Jaune */
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20px;
+    -fx-padding: 8px 25px;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 8, 0, 0, 2px);
+}
+
+.retourButton:hover {
+    -fx-background-color: #2196F3; 
+}
+
+
+

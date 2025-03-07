@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" style="-fx-padding: 10;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestion_de_tâches.TachesTermineesController">
+    <Label text="Tâches Terminées" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+    
+    <!-- Conteneur pour les cartes de tâches terminées -->
+    <FlowPane fx:id="tachesFlowPane" hgap="10" vgap="10" alignment="CENTER">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+
+        <!-- Exemple de carte de tâche terminée -->
+        <VBox styleClass="task-card-terminée">
+            <Label text="Tâche 1" styleClass="task-card-title"/>
+            <Label text="Description de la tâche 1" styleClass="task-description"/>
+            <Label text="Date: 2023-10-01" styleClass="task-date"/>
+            <Label text="Priorité: Basse" styleClass="priority-label priority-low"/>
+            <Label text="Statut: Terminée" styleClass="status-label"/>
+        </VBox>
+
+        <!-- Exemple de carte de tâche terminée -->
+        <VBox styleClass="task-card-terminée">
+            <Label text="Tâche 2" styleClass="task-card-title"/>
+            <Label text="Description de la tâche 2" styleClass="task-description"/>
+            <Label text="Date: 2023-10-02" styleClass="task-date"/>
+            <Label text="Priorité: Moyenne" styleClass="priority-label priority-medium"/>
+            <Label text="Statut: Terminée" styleClass="status-label"/>
+        </VBox>
+
+        <!-- Exemple de carte de tâche terminée -->
+        <VBox styleClass="task-card-terminée">
+            <Label text="Tâche 3" styleClass="task-card-title"/>
+            <Label text="Description de la tâche 3" styleClass="task-description"/>
+            <Label text="Date: 2023-10-03" styleClass="task-date"/>
+            <Label text="Priorité: Haute" styleClass="priority-label priority-high"/>
+            <Label text="Statut: Terminée" styleClass="status-label"/>
+        </VBox>
+    </FlowPane>
+
+    <!-- Bouton de retour -->
+    <HBox spacing="10" alignment="CENTER_RIGHT">
+       
+        <Button text="Retour" onAction="#retourAMain" styleClass="retourButton"/>
+   
+    </HBox>
+</VBox>

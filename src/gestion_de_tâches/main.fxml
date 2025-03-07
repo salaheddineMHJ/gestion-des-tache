@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="gestion_de_tâches.MainController" 
+            stylesheets="@styles.css">
+    
+    <!-- Top: Search + Filter -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10;">
+            <!-- Section Filtre -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                 <ComboBox fx:id="filterComboBox" promptText="Toutes les catégories" style="-fx-pref-width: 200;"/>
+           
+                <TextField fx:id="searchField" promptText="Rechercher par titre ou description" style="-fx-pref-width: 300px;"/>
+                <Button fx:id="rechercherButton" text="Appliquer" onAction="#handleGlobalSearchFilter" />
+            </HBox>
+        </VBox>
+    </top>
+    <!-- Center: Main Content -->
+    <center>
+        <VBox fx:id="dashboardVBox" spacing="10" style="-fx-padding: 10;">
+            <!-- Dashboard: Task summary -->
+            <HBox spacing="20">
+                <VBox spacing="5">
+                    <Label text="Tâches en cours" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <Label fx:id="tachesEnCoursLabel" text="0"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Tâches urgentes" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <Label fx:id="tachesUrgentesLabel" text="0"/>
+                </VBox>
+                <VBox spacing="5">
+                    <Label text="Progression globale" style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+                    <ProgressBar fx:id="progressBar" progress="0" prefWidth="200"/>
+                </VBox>
+            </HBox>
+
+            <!-- Task Table -->
+          <TableView fx:id="tacheTable" prefWidth="800" prefHeight="400">
+    <!-- Colonnes du tableau -->
+    <columns>
+        <TableColumn text="Titre" fx:id="titreCol"/>
+        <TableColumn text="Description" fx:id="descriptionCol"/>
+        <TableColumn text="Date d'échéance" fx:id="dateCol"/>
+        <TableColumn text="Priorité" fx:id="prioriteCol"/>
+        <TableColumn text="Catégorie" fx:id="categorieCol"/>
+        <TableColumn text="Statut" fx:id="statutCol"/>
+    </columns>
+</TableView>
+
+            <HBox spacing="10">
+                <Button fx:id="messageButton" text="Messages" onAction="#afficherMessages"/>
+                <Button fx:id="afficherDiagrammeButton" text=" Diagramme" onAction="#afficherDiagramme"/>
+                <Button fx:id="ajouterButton" text="Ajouter " onAction="#afficherFormulaireAjout"/>
+                <Button fx:id="modifierButton" text="Modifier " onAction="#afficherFormulaireModification"/>
+               <Button fx:id="tachesAVenirButton" text="Tâches à Venir" onAction="#afficherTachesAVenir"/>
+                <Button fx:id="tachesTermineesButton" text="Tâches Terminées" onAction="#afficherTachesTerminees" styleClass="messageButton"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- Right: Forms -->
+    <right>
+        <!-- Add Task Form -->
+        <VBox fx:id="formulaireAjoutBox" spacing="10" style="-fx-background-color: #f4f4f4; -fx-padding: 10;" visible="false">
+            <Label text="Ajouter une Tâche" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <TextField fx:id="titreField" promptText="Titre de la tâche"/>
+            <TextField fx:id="descriptionField" promptText="Description"/>
+            <DatePicker fx:id="datePicker" promptText="Date d'échéance"/>
+            <ComboBox fx:id="prioriteComboBox" promptText="Priorité"/>
+            <ComboBox fx:id="categorieComboBox" promptText="Catégorie"/>
+            <TextField fx:id="joursRappelField" promptText="Nombre de jours pour le rappel"/>
+            <HBox spacing="10">
+                <Button fx:id="sauvegarderAjoutButton" text="Sauvegarder" onAction="#sauvegarderTache"/>
+                <Button fx:id="annulerAjoutButton" text="Annuler" onAction="#cacherFormulaireAjout"/>
+            </HBox>
+        </VBox>
+
+        <!-- Edit Task Form -->
+        <VBox fx:id="formulaireModificationBox" spacing="10" style="-fx-background-color: #f4f4f4; -fx-padding: 10;" visible="false">
+            <Label text="Modifier une Tâche" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <TextField fx:id="titreModifField" promptText="Titre de la tâche"/>
+            <TextField fx:id="descriptionModifField" promptText="Description"/>
+            <DatePicker fx:id="dateModifPicker" promptText="Date d'échéance"/>
+            <ComboBox fx:id="prioriteModifComboBox" promptText="Priorité"/>
+            <ComboBox fx:id="categorieModifComboBox" promptText="Catégorie"/>
+            <TextField fx:id="joursRappelModifField" promptText="Nombre de jours pour le rappel"/>
+            <HBox spacing="10">
+                <Button fx:id="sauvegarderModifButton" text="Sauvegarder" onAction="#sauvegarderTacheModif"/>
+<Button fx:id="terminerModifButton" text="Terminer Tâche" onAction="#terminerTacheModif"/>
+<Button fx:id="supprimerModifButton" text="Supprimer" onAction="#supprimerTacheModif"/>
+<Button fx:id="annulerModifButton" text="Annuler" onAction="#cacherFormulaireModification"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>
